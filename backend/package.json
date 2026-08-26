@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Sommai",
+  "author": "Kitikon",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.6",
@@ -21,10 +21,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sommai-Supawong/express-sequelize.git"
+    "url": "git+https://github.com/Kitikon15/API-Express-Lab.git"
   },
   "bugs": {
-    "url": "https://github.com/Sommai-Supawong/express-sequelize/issues"
+    "url": "https://github.com/Kitikon15/API-Express-Lab/issues"
   },
-  "homepage": "https://github.com/Sommai-Supawong/express-sequelize#readme"
+  "homepage": "https://github.com/Kitikon15/API-Express-Lab#readme"
 }
