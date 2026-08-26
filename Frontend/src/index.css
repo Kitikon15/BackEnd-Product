@@ -1,0 +1,32 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital,wght@0,400;1,400&family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Global Font Stack ──────────────────────────────────────────────────── */
+/*
+  ใช้ Kanit สำหรับตัวอักษรไทย (unicode-range: Thai block U+0E00–U+0E7F)
+  และ Inter สำหรับตัวอักษรละติน — browser จะเลือก font ให้อัตโนมัติ
+*/
+@font-face {
+  font-family: 'KanitThai';
+  src: local('Kanit'),
+       url('https://fonts.gstatic.com/s/kanit/v15/nKKZ-Go6G5tXcraBGwCKd6xBDFs.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  unicode-range: U+0E00-U+0E7F; /* Thai characters only */
+  font-display: swap;
+}
+
+* {
+  font-family: 'KanitThai', 'Inter', 'Kanit', sans-serif;
+}
+
+/* Italic / Instrument Serif — ใช้ Inter italic fallback สำหรับ latin */
+.font-serif-italic {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+}
