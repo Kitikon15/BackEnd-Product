@@ -21,10 +21,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kitikon15/API-Express-Lab.git"
+    "url": "git+https://github.com/Kitikon15/BackEnd-Product.git"
   },
   "bugs": {
-    "url": "https://github.com/Kitikon15/API-Express-Lab/issues"
+    "url": "https://github.com/Kitikon15/BackEnd-Product/issues"
   },
-  "homepage": "https://github.com/Kitikon15/API-Express-Lab#readme"
+  "homepage": "https://github.com/Kitikon15/BackEnd-Product#readme"
 }
