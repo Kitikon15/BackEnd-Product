@@ -4,7 +4,10 @@ import { Sequelize, DataTypes } from "sequelize";
 const dbName = process.env.PGDATABASE;
 const dbUser = process.env.PGUSER;
 const dbPassword = process.env.PGPASSWORD;
-const dbURL = process.env.PGHOST;
+const dbURL = process.env.PGHOST_UNPOOLED;
+const dbPort = process.env.PORT;
+
+// const dbURLUnpooled = process.env.DATABASE_URL_UNPOOLED;
 
 // สร้างการเชื่อมต่อ PostgreSQL
 const sequelize = new Sequelize(
@@ -13,7 +16,7 @@ const sequelize = new Sequelize(
     dbPassword,
     {
         host: dbURL,
-        port: 5433,
+        port: dbPort,
         dialect: "postgres",
         logging: false,
         dialectOptions: {
