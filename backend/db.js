@@ -4,6 +4,12 @@ import dotenv from "dotenv";
 // โหลดค่าจากไฟล์ .env
 dotenv.config();
 
+const  databaseUrl = process.env.DATABASE_URL_UNPOOLED;
+
+if (!databaseUrl) {
+    throw new Error("DATABASE_URL is required");
+}
+
 // ดึงค่าจาก process.env ตามชื่อในไฟล์ .env ของคุณ
 const dbName = process.env.PGDATABASE;
 const dbUser = process.env.PGUSER;
@@ -13,12 +19,8 @@ const dbPort = process.env.PORT || 5432;
 
 // สร้างการเชื่อมต่อ PostgreSQL กับ Neon Cloud
 const sequelize = new Sequelize(
-    dbName,
-    dbUser,
-    dbPassword,
+    databaseUrl,
     {
-        host: dbHost,
-        port: dbPort,
         dialect: "postgres",
         logging: false,
         dialectOptions: {
