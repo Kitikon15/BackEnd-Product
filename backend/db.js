@@ -11,11 +11,11 @@ if (!databaseUrl) {
 }
 
 // ดึงค่าจาก process.env ตามชื่อในไฟล์ .env ของคุณ
-const dbName = process.env.PGDATABASE;
-const dbUser = process.env.PGUSER;
-const dbPassword = process.env.PGPASSWORD;
-const dbHost = process.env.PGHOST; // หรือใช้ PGHOST_UNPOOLED
-const dbPort = process.env.PORT || 5432;
+// const dbName = process.env.PGDATABASE;
+// const dbUser = process.env.PGUSER;
+// const dbPassword = process.env.PGPASSWORD;
+// const dbHost = process.env.PGHOST; 
+// const dbPort = process.env.PORT || 5432;
 
 // สร้างการเชื่อมต่อ PostgreSQL กับ Neon Cloud
 const sequelize = new Sequelize(
