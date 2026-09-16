@@ -1,21 +1,23 @@
 import { Sequelize, DataTypes } from "sequelize";
+import dotenv from "dotenv";
 
+// โหลดค่าจากไฟล์ .env
+dotenv.config();
 
+// ดึงค่าจาก process.env ตามชื่อในไฟล์ .env ของคุณ
 const dbName = process.env.PGDATABASE;
 const dbUser = process.env.PGUSER;
 const dbPassword = process.env.PGPASSWORD;
-const dbURL = process.env.PGHOST_UNPOOLED;
-const dbPort = process.env.PORT;
+const dbHost = process.env.PGHOST; // หรือใช้ PGHOST_UNPOOLED
+const dbPort = process.env.PORT || 5432;
 
-// const dbURLUnpooled = process.env.DATABASE_URL_UNPOOLED;
-
-// สร้างการเชื่อมต่อ PostgreSQL
+// สร้างการเชื่อมต่อ PostgreSQL กับ Neon Cloud
 const sequelize = new Sequelize(
     dbName,
     dbUser,
     dbPassword,
     {
-        host: dbURL,
+        host: dbHost,
         port: dbPort,
         dialect: "postgres",
         logging: false,
@@ -49,7 +51,7 @@ const Product = sequelize.define("Product", {
 const connectDB = async () => {
     try {
         await sequelize.authenticate();
-        console.log("PostgreSQL connected successfully");
+        console.log("Neon PostgreSQL connected successfully!");
 
         await sequelize.sync({ alter: true });
         console.log("Tables synchronized successfully");
